@@ -25,7 +25,7 @@ public class User {
 
     private String shop_id;
 
-    private String role; // manager finance and admin
+    private Roles role; // manager finance and admin
 
     private LocalDateTime createdAt;
 
