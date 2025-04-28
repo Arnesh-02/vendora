@@ -1,14 +1,15 @@
 package com.vendora.VendorManagementSystem.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "business")
@@ -22,5 +23,6 @@ public class Business {
     private String address;
     private LocalDateTime createdAt;
     private  String gstNumber;
-
+    private List<String> userIds;
+    private boolean active;
 }

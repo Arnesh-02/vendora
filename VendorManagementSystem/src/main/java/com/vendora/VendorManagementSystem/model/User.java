@@ -23,10 +23,10 @@ public class User {
 
     private  String phoneNo;
 
-    private String shop_id;
+    private String businessId;
 
     private Roles role; // manager finance and admin
 
     private LocalDateTime createdAt;
-
+    private  boolean active;
 }

@@ -1,21 +1,18 @@
 package com.vendora.VendorManagementSystem.services;
 
-
 import com.vendora.VendorManagementSystem.exception.UserNotFoundException;
+import com.vendora.VendorManagementSystem.exception.VendorNotFoundException;
 import com.vendora.VendorManagementSystem.model.Vendor;
-import com.vendora.VendorManagementSystem.repository.VendorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
-@Service
-public class VendorService {
+public interface VendorService {
 
-    @Autowired
-    VendorRepository vendorRepository;
+    Optional<Vendor> getVendorById(String id) throws VendorNotFoundException;
 
-    public Optional<Vendor> getVendorById(String id) throws UserNotFoundException {
-        return vendorRepository.findById(id);
-    }
+    List<Vendor> getVendorByBusiness(String businessId);
+
+    Optional<Vendor> updateVendor(String vendorId, Vendor updatedVendor) throws VendorNotFoundException;
+
 }
