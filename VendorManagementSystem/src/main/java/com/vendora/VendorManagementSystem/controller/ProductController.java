@@ -5,6 +5,7 @@ import com.vendora.VendorManagementSystem.dto.ProductUpdateRequest;
 import com.vendora.VendorManagementSystem.exception.BusinessNotFoundException;
 import com.vendora.VendorManagementSystem.exception.ProductNotFoundException;
 import com.vendora.VendorManagementSystem.model.Product;
+import com.vendora.VendorManagementSystem.services.ProductService;
 import com.vendora.VendorManagementSystem.services.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -45,7 +46,7 @@ public class ProductController {
         return  productService.getProductsByBusiness(businessId);
     }
 
-    @PatchMapping("/{productId}/deativate")
+    @PatchMapping("/{productId}/deactivate")
     public  Product deactivateProduct(@PathVariable String productId) throws ProductNotFoundException {
         return  productService.deactivateProduct(productId);
     }

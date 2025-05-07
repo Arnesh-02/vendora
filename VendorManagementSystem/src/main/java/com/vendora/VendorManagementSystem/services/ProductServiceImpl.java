@@ -9,10 +9,13 @@ import com.vendora.VendorManagementSystem.model.ProductStatus;
 import com.vendora.VendorManagementSystem.repository.BusinessRepository;
 import com.vendora.VendorManagementSystem.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class ProductServiceImpl implements  ProductService{
 
     @Autowired
@@ -59,7 +62,7 @@ public class ProductServiceImpl implements  ProductService{
     @Override
     public List<Product> getProductsByBusiness(String businessId)  throws  BusinessNotFoundException{
         Business business =businessRepo.findById(businessId).orElseThrow(()-> new BusinessNotFoundException());
-        return  productRepo.findProductByBusinessIdAndActiveTrue(businessId);
+        return  productRepo.findProductByBusinessId(businessId);
     }
 
     @Override

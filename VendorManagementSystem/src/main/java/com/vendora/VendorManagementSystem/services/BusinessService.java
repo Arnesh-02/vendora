@@ -13,6 +13,7 @@ public interface BusinessService {
     public String assignBusinessToUser(String bId,String userid);
     public List<Business> getAllBusiness();
     public ResponseEntity<String> deactivateBusiness(String id);
-    public List<Business> getBusinessesByUserId(String userId);
+//    public List<Business> getBusinessesByUserId(String userId);
+    public Business createBusiness(Business business);
 
 }
